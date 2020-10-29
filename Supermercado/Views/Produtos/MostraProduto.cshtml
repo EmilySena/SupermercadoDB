@@ -1,0 +1,42 @@
+﻿@model Supermercado.Models.Produto
+@{
+    ViewBag.Title = Model.Nome;
+}
+<div>
+    <table>
+        <tr>
+            <td>================= </td>
+            <td>================= </td>
+        </tr>
+        <tr>
+            <td>Código do Produto : </td>
+            <td> @Model.Codigo</td>
+        </tr>
+        <tr>
+            <td>Nome do Produto : </td>
+            <td> @Model.Nome</td>
+        </tr>
+        <tr>
+            <td>Categoria do Produto : </td>
+            <td> @Html.ActionLink(Model.Categoria, "MostraCategoria", "Produtos", new {@categoria = Model.Categoria}, null)</td>
+        </tr>
+        <tr>
+            <td>Marca do Produto : </td>
+            <td> @Model.Marca</td>
+        </tr>
+        <tr>
+            <td>Preco : </td>
+            <td> @Model.Preco</td>
+        </tr>
+        <tr>
+            <td>================= </td>
+            <td>================= </td>
+        </tr>
+    </table>
+</div>
+<div>
+    @Html.ActionLink("Comprar", "Cadastro", "Pessoa")
+</div>
+<div>
+    @Html.ActionLink("Voltar", "Index", "Produtos")
+</div>

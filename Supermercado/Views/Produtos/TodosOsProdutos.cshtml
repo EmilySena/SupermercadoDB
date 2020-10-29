@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Supermercado.Models.Produto>
+@{
+    ViewBag.Title = "TodosOsProdutos";
+}
+<div ng-controller="ProdutosController">
+    <div style="font-weight:bold">
+        <h2> Todos os Produtos:</h2>
+    </div>
+    <table>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>Código do Produto : </td>
+                <td> @produto.Codigo</td>
+            </tr>
+            <tr>
+                <td>Nome do Produto : </td>
+                <td> @produto.Nome</td>
+            </tr>
+            <tr>
+                <td>Categoria do Produto : </td>
+                <td> @produto.Categoria</td>
+            </tr>
+            <tr>
+                <td>Marca do Produto : </td>
+                <td> @produto.Marca</td>
+            </tr>
+            <tr>
+                <td>Preco : </td>
+                <td> @produto.Preco</td>
+            </tr>
+            <tr>
+                <td>================= </td>
+                <td>================= </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    @Html.ActionLink("Voltar", "Index", "Produtos")
+</div>

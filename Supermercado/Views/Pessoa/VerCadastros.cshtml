@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Supermercado.Models.Pessoa>
+@{
+    ViewBag.Title = "VerCadastros";
+}
+
+<h2>Ver Cadastros</h2>
+<div ng-controller="PessoaController">
+    <div style="font-weight:bold">
+        <h2> Cadastros realizados:</h2>
+    </div>
+@foreach (var pessoa in Model)
+{
+    <table>
+        <tr>
+            <td>Id : </td>
+            <td> @pessoa.Id</td>
+        </tr>
+        <tr>
+            <td>Nome : </td>
+            <td> @pessoa.Nome</td>
+        </tr>
+        <tr>
+            <td>Email : </td>
+            <td> @pessoa.Email</td>
+        </tr>
+        <tr>
+            <td>Idade : </td>
+            <td> @pessoa.Idade</td>
+        </tr>
+        <tr>
+            <td>Login : </td>
+            <td> @pessoa.Login</td>
+        </tr>
+        <tr>
+            <td>============ </td>
+            <td>============ </td>
+        </tr>
+    </table>
+}
+</div>
+<p>
+    @Html.ActionLink("Voltar", "Cadastro")
+</p>
+

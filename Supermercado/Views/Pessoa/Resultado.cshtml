@@ -1,0 +1,43 @@
+﻿@model Supermercado.Models.Pessoa
+@{
+    ViewBag.Title = "Seus Dados";
+}
+
+<h2>Cadastro realizado com sucesso!</h2>
+<div ng-controller="PessoaController">
+    <div style="font-weight:bold">
+        <h2> Seus dados:</h2>
+    </div>
+    <table>
+        <tr>
+            <td>Nome : </td>
+            <td> @Model.Nome</td>
+        </tr>
+        <tr>
+            <td>Email : </td>
+            <td> @Model.Email</td>
+        </tr>
+        <tr>
+            <td>Idade : </td>
+            <td> @Model.Idade</td>
+        </tr>
+        <tr>
+            <td>Login : </td>
+            <td> @Model.Login</td>
+        </tr>
+        <tr>
+            <td>============ </td>
+            <td>============ </td>
+        </tr>
+    </table>
+</div>
+<h4>Confirma seus dados?</h4>
+<p>
+    @Html.ActionLink("Voltar", "Cadastro")
+</p>
+<div>
+    @Html.ActionLink("Ir para pagamento", "Pagamento", "Home")
+</div>
+<div>
+    @Html.ActionLink("Ver cadastrados", "VerCadastros", "Pessoa")
+</div>

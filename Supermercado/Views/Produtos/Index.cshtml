@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Supermercado.Models.Produto>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Produtos</h1>
+<h2>Categorias:</h2>
+<div>
+    <ul>
+        @foreach (string item in ViewBag.Categorias)
+        {
+            <li>
+                @Html.ActionLink(item, "MostraCategoria", "Produtos", new { @categoria = item }, null)
+            </li>
+        }
+    </ul>
+</div>
+<h2>Produtos mais vendidos:</h2>
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Nome, "MostraProduto", "Produtos", new
+                {
+                    @codigo = item.Codigo,
+                    @categoria = item.Categoria.ToLower(),
+                    @nome = item.Nome.ToLower()
+                }, null)
+                <em>@Html.DisplayFor(modelItem => item.Categoria)</em>
+                <b>@Html.DisplayFor(modelItem => item.Preco)</b>
+            </li>
+        }
+    </ul>
+</div>
+<div>
+    @Html.ActionLink("Todos os Produtos", "TodosOsProdutos", "Produtos")
+</div>
